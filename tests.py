@@ -37,8 +37,8 @@ class KnownValues(unittest.TestCase):
     def test_get_word_int_formatted_added_values(self):                                   
         """get_word_int_formatted should give known result with known input"""
         nw = NumWords()
-        nw.addWords([u"widelec",u"widelców",u"widelce"])
-        nw.addWordsList([[u"piłka",u"piłek",u"piłki"],[u"łyżka",u"łyżek",u"łyżki"]])                         
+        nw.add_words([u"widelec",u"widelców",u"widelce"])
+        nw.add_words_list([[u"piłka",u"piłek",u"piłki"],[u"łyżka",u"łyżek",u"łyżki"]])                         
         self.assertEqual(u"widelce", nw.get_word_int_formatted(u"widelec",2))  
         self.assertEqual(u"łyżek", nw.get_word_int_formatted(u"łyżka",5)) 
               

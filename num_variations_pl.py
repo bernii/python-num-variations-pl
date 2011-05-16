@@ -18,10 +18,10 @@ class NumWords(object):
                     # add your additional words here
                  ]
 
-    def addWords(self,one_words_list):
+    def add_words(self,one_words_list):
         self.dictionary.append(one_words_list)
         
-    def addWordsList(self,multiple_words_list):
+    def add_words_list(self,multiple_words_list):
         self.dictionary.extend(multiple_words_list)
         
     def get_word_int_formatted(self, word, number):

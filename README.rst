@@ -24,10 +24,10 @@ You can add it to your tags.py, simplest way:
 ::
   from num_variations_pl import NumWords
   @register.simple_tag
-    def getWordIntVariation(word, number):
+    def get_word_int_variation(word, number):
       nw = NumWords()
       # add a new word with its variations 
-      nw.addWords([u"widelec",u"widelców",u"widelce"])
+      nw.add_words([u"widelec",u"widelców",u"widelce"])
       # add multiple words with variations
-      nw.addWordsList([[u"piłka",u"piłek",u"piłki"],[u"łyżka",u"łyżek",u"łyżki"]])
+      nw.add_words_list([[u"piłka",u"piłek",u"piłki"],[u"łyżka",u"łyżek",u"łyżki"]])
       return nw.get_word_int_formatted(word,number)
