@@ -1,4 +1,4 @@
-=========================
+Ôªø=========================
 python-num-variations-pl
 =========================
 
@@ -7,13 +7,13 @@ This repository hosts project for generating plural forms of polish words in pyt
 When to use it? (in Polish)
 ============================
 
-Chcia≥byú øeby jakiú wyraz by≥ odmieniany w zaleøonoúci od liczby przy jakiej stoi? DziÍki temu projektowi moøesz dokonaÊ automatyczniej odmiany wyrazu w zaleønoúci od liczby. Zamiast:
+Chcia≈Çby≈õ ≈ºeby jaki≈õ wyraz by≈Ç odmieniany w zale≈ºono≈õci od liczby przy jakiej stoi? Dziƒôki temu projektowi mo≈ºesz dokonaƒá automatyczniej odmiany wyrazu w zale≈ºno≈õci od liczby. Zamiast:
 :: 
-  1 s≥Ûwko, 2 s≥Ûwko, 3 s≥Ûwko,..., 23425 s≥Ûwko,...
+  1 s≈Ç√≥wko, 2 s≈Ç√≥wko, 3 s≈Ç√≥wko,..., 23425 s≈Ç√≥wko,...
 
 uzyskasz:
 ::
-  1 s≥Ûwko, 2 s≥Ûwka, 3 s≥Ûwka,..., 23425 s≥Ûwek,...
+  1 s≈Ç√≥wko, 2 s≈Ç√≥wka, 3 s≈Ç√≥wka,..., 23425 s≈Ç√≥wek,...
 
 Tak chyba jest lepiej? ;)
 
@@ -27,7 +27,7 @@ You can add it to your tags.py, simplest way:
     def getWordIntVariation(word, number):
       nw = NumWords()
 	  # add a new word with its variations 
-      nw.addWords([u"widelec",u"widelcÛw",u"widelce"])
+      nw.addWords([u"widelec",u"widelc√≥w",u"widelce"])
 	  # add multiple words with variations
-      nw.addWordsList([[u"pi≥ka",u"pi≥ek",u"pi≥ki"],[u"≥yøka",u"≥yøek",u"≥yøki"]])
+      nw.addWordsList([[u"pi≈Çka",u"pi≈Çek",u"pi≈Çki"],[u"≈Çy≈ºka",u"≈Çy≈ºek",u"≈Çy≈ºki"]])
 	  return nw.get_word_int_formatted(word,number)
