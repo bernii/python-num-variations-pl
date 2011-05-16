@@ -26,8 +26,8 @@ You can add it to your tags.py, simplest way:
   @register.simple_tag
     def getWordIntVariation(word, number):
       nw = NumWords()
-	  # add a new word with its variations 
+      # add a new word with its variations 
       nw.addWords([u"widelec",u"widelców",u"widelce"])
-	  # add multiple words with variations
+      # add multiple words with variations
       nw.addWordsList([[u"piłka",u"piłek",u"piłki"],[u"łyżka",u"łyżek",u"łyżki"]])
-	  return nw.get_word_int_formatted(word,number)
+      return nw.get_word_int_formatted(word,number)
