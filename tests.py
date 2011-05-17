@@ -10,6 +10,9 @@ import num_variations_pl
 
 
 class KnownValues(unittest.TestCase):
+    '''
+    Test case for known values
+    '''
     known_values = (
                     ([22, u'słówko'], u'słówka'),
                     ([12, u'słówko'], u'słówek'),
@@ -30,15 +33,15 @@ class KnownValues(unittest.TestCase):
     def test_get_word_int_formatted_known_values(self):
         """get_word_int_formatted should give known result with known input"""
         nw = NumWords()
-        for list, out in self.known_values:
-            result = nw.get_word_int_formatted(list[1], list[0])
+        for lis, out in self.known_values:
+            result = nw.get_word_int_formatted(lis[1], lis[0])
             self.assertEqual(out, result)
 
     def test_get_word_int_formatted_added_values(self):
         """get_word_int_formatted should give known result with known input"""
         nw = NumWords()
-        nw.add_words([u"widelec", u"widelców", u"widelce"])
-        nw.add_words_list([[u"piłka", u"piłek", u"piłki"], [u"łyżka", u"łyżek", u"łyżki"]])
+        nw.add_word([u"widelec", u"widelców", u"widelce"])
+        nw.add_words([[u"piłka", u"piłek", u"piłki"], [u"łyżka", u"łyżek", u"łyżki"]])
         self.assertEqual(u"widelce", nw.get_word_int_formatted(u"widelec", 2))
         self.assertEqual(u"łyżek", nw.get_word_int_formatted(u"łyżka", 5))
 

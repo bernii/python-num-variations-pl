@@ -9,14 +9,23 @@ Created on 2010-04-11
 
 
 class NoSuchWordInDictionary(Exception):
+    '''
+    Unable to return word variation as it is not available in dictionary
+    '''
     pass
 
 
 class NotInteger(Exception):
+    '''
+    Passed number is not an integer
+    '''
     pass
 
 
 class NumWords(object):
+    '''
+    Get word variation for a number
+    '''
 
     # default built-in polish words
     dictionary = [['komentarz', 'komentarzy', 'komentarze'],
@@ -24,13 +33,26 @@ class NumWords(object):
                   # add your additional words here
                  ]
 
-    def add_words(self, one_words_list):
+    def add_word(self, one_words_list):
+        '''
+        Add word to dictionary
+        @param one_words_list: List with word variations
+        '''
         self.dictionary.append(one_words_list)
 
-    def add_words_list(self, multiple_words_list):
+    def add_words(self, multiple_words_list):
+        '''
+        Add multiple words to dictionary
+        @param multiple_words_list: List with words variations
+        '''
         self.dictionary.extend(multiple_words_list)
 
     def get_word_int_formatted(self, word, number):
+        '''
+        Main function for getting word for a specific number
+        @param word:
+        @param number:
+        '''
         ldigits = lambda n, l = []: not n and l or l.insert(0, n % 10) or ldigits(n / 10, l)
         if not isinstance(number, int):
             raise NotInteger
@@ -39,9 +61,9 @@ class NumWords(object):
         digits = ldigits(number)
 
         out = None
-        for list in self.dictionary:
-            if list[0] == word:
-                out = list
+        for wlist in self.dictionary:
+            if wlist[0] == word:
+                out = wlist
         if out is None:
             raise NoSuchWordInDictionary
 
